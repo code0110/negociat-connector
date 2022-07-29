@@ -3,7 +3,7 @@
 @section('content')
     <div class="card-body">
         <h1 class="page-title">Negociat Connector</h1>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('negociat-connector.import') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="file" class="form-control">
                 <br>

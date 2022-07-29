@@ -6,6 +6,7 @@ use Assets;
 use Botble\ACL\Models\User;
 use Botble\NegociatConnector\Models\NegociatProduct;
 use Botble\NegociatConnector\Exports\ProductsExport;
+use Botble\NegociatConnector\Imports\ImportNegociatProducts;
 use Botble\Base\Events\BeforeEditContentEvent;
 use Botble\Base\Events\CreatedContentEvent;
 use Botble\Base\Events\DeletedContentEvent;
@@ -39,12 +40,11 @@ class NegociatConnectorController extends BaseController
         return view('plugins/negociat-connector::index', compact('products'));
     }
 
-    /**
-     * @param BaseHttpResponse $response
-     * @return BaseHttpResponse
-     */
-    public function import(){
-        
+    public function import_negociat() 
+    {
+        Excel::import(new ImportNegociatProducts, request()->file('file')->store('temp'));
+               
+        return back();
     }
 
     public function export() 

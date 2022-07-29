@@ -9,11 +9,11 @@ Route::group([
             'as'         => 'negociat-connector',
             'uses'       => 'NegociatConnectorController@index',
             'permission' => 'settings.options',
-        ]);
+        ]);     
 
-        Route::post('negociat-connector', [
-            'as'         => 'negociat-connector.post',
-            'uses'       => 'NegociatConnectorController@import',
+    Route::post('negociat-connector', [
+            'as'         => 'negociat-connector.import',
+            'uses'       => 'NegociatConnectorController@import_negociat',
             'permission' => 'settings.options',
         ]);
     });

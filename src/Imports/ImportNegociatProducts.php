@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Imports;
+namespace Botble\NegociatConnector\Imports;
 
-use App\Models\Product;
+use Botble\NegociatConnector\Models\NegociatProduct;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Imports\HeadingRowFormatter;
 use Hash;
 
-class ProductsNegociatImport implements ToModel
+class ImportNegociatProducts implements ToModel
 {
     /**
     * @param array $row
@@ -17,7 +17,7 @@ class ProductsNegociatImport implements ToModel
     */
     public function model(array $row)
     {
-        return new Product([
+        return new NegociatProduct([
             'id_n' => $row[0],
             'nume_produs' => $row[3], 
             'cod' => $row[1],

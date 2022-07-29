@@ -1,0 +1,9 @@
+{
+    "name": "Negociat Connector",
+    "namespace": "Botble\\NegociatConnector\\",
+    "provider": "Botble\\NegociatConnector\\Providers\\NegociatConnectorServiceProvider",
+    "author": "Botezatu Catalin",
+    "url": "https://metal-rom.ro",
+    "version": "1.0",
+    "description": "Negociat Connector"
+}

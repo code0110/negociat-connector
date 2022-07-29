@@ -21,7 +21,7 @@
                 <tr>
                     <th colspan="3">
                         Lista produse
-                        <a class="btn btn-warning float-end" href="">Export product data</a>
+                        <a class="btn btn-warning float-end" href="{{ route('negociat-connector.export') }}">Export product data</a>
                     </th>
                     <th colspan="3">                        
                         <a class="btn btn-warning float-end" href="">Actualizare Preturi</a>

@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Exports;
+namespace Botble\NegociatConnector\Exports;
 
-use App\Models\Product;
+use Botble\NegociatConnector\Models\NegociatProduct;
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Table\Supports\TableExportHandler;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ProducsExport implements FromCollection, WithHeadings
+class ProductsExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
-        //return Product::all();
-        return Product::select("id_n", "cod_pack", "nume_produs", "pret_neg", "pret_lista_neg", "stoc")->get();
+        return NegociatProduct::select("id_n", "cod_pack", "nume_produs", "pret_neg", "pret_lista_neg", "stoc")->get();
     }
 
     public function headings(): array

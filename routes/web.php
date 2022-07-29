@@ -17,4 +17,11 @@ Route::group([
             'permission' => 'settings.options',
         ]);
     });
+
+    Route::get('negociat-connector', [
+            'as'         => 'negociat-connector.export',
+            'uses'       => 'NegociatConnectorController@export',
+            'permission' => 'settings.options',
+        ]);
+ 
 });

@@ -5,6 +5,7 @@ namespace Botble\NegociatConnector\Http\Controllers;
 use Assets;
 use Botble\ACL\Models\User;
 use Botble\NegociatConnector\Models\NegociatProduct;
+use Botble\NegociatConnector\Exports\ProductsExport;
 use Botble\Base\Events\BeforeEditContentEvent;
 use Botble\Base\Events\CreatedContentEvent;
 use Botble\Base\Events\DeletedContentEvent;
@@ -19,6 +20,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\View\View;
 use Throwable;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Product;
 
 class NegociatConnectorController extends BaseController
 {
@@ -42,5 +45,10 @@ class NegociatConnectorController extends BaseController
      */
     public function import(){
         
+    }
+
+    public function export() 
+    {
+        return Excel::download(new ProductsExport, 'products.csv');
     }
 }

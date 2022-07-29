@@ -37,7 +37,7 @@ class NegociatConnectorServiceProvider extends ServiceProvider
                     'permissions' => ['settings.options'],
                 ])
                 ->registerItem([
-                    'id'          => 'cms-plugin-negociat-connector2',
+                    'id'          => 'cms-plugin-negociat-products',
                     'priority'    => 10,
                     'parent_id'   => 'cms-plugin-negociat-connector',
                     'name'        => 'plugins/negociat-connector::negociat-connector.name',
